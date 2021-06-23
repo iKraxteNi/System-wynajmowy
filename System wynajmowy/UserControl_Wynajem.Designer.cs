@@ -222,7 +222,7 @@ namespace System_wynajmowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Moccasin;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
             this.Controls.Add(this.dataGridView2s);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);

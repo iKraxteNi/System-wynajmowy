@@ -41,12 +41,11 @@ namespace System_wynajmowy
             this.bM = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(170)))), ((int)(((byte)(139)))));
             this.panel1.Controls.Add(this.buttonR);
             this.panel1.Controls.Add(this.buttonEnData);
             this.panel1.Controls.Add(this.buttonCData);
@@ -65,6 +64,7 @@ namespace System_wynajmowy
             this.buttonR.BackColor = System.Drawing.Color.LimeGreen;
             this.buttonR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonR.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonR.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonR.Location = new System.Drawing.Point(539, 10);
             this.buttonR.Name = "buttonR";
@@ -79,6 +79,7 @@ namespace System_wynajmowy
             this.buttonEnData.BackColor = System.Drawing.Color.LimeGreen;
             this.buttonEnData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonEnData.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonEnData.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEnData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonEnData.Location = new System.Drawing.Point(1042, 10);
             this.buttonEnData.Name = "buttonEnData";
@@ -93,12 +94,13 @@ namespace System_wynajmowy
             this.buttonCData.BackColor = System.Drawing.Color.LimeGreen;
             this.buttonCData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonCData.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonCData.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonCData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCData.Location = new System.Drawing.Point(789, 10);
             this.buttonCData.Name = "buttonCData";
             this.buttonCData.Size = new System.Drawing.Size(215, 78);
             this.buttonCData.TabIndex = 2;
-            this.buttonCData.Text = "Dane klienta";
+            this.buttonCData.Text = "Wynajem";
             this.buttonCData.UseVisualStyleBackColor = false;
             // 
             // buttonRe
@@ -107,6 +109,7 @@ namespace System_wynajmowy
             this.buttonRe.BackColor = System.Drawing.Color.LimeGreen;
             this.buttonRe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonRe.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonRe.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonRe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonRe.Location = new System.Drawing.Point(286, 10);
             this.buttonRe.Name = "buttonRe";
@@ -114,7 +117,6 @@ namespace System_wynajmowy
             this.buttonRe.TabIndex = 1;
             this.buttonRe.Text = "Klient";
             this.buttonRe.UseVisualStyleBackColor = false;
-          //  this.buttonRe.Click += new System.EventHandler(this.buttonRe_Click);
             // 
             // buttonRoom
             // 
@@ -122,6 +124,7 @@ namespace System_wynajmowy
             this.buttonRoom.BackColor = System.Drawing.Color.LimeGreen;
             this.buttonRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonRoom.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonRoom.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonRoom.Location = new System.Drawing.Point(35, 9);
             this.buttonRoom.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
@@ -134,6 +137,7 @@ namespace System_wynajmowy
             // 
             // bX
             // 
+            this.bX.BackColor = System.Drawing.Color.Orange;
             this.bX.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bX.BackgroundImage")));
             this.bX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bX.Location = new System.Drawing.Point(1276, 7);
@@ -141,12 +145,12 @@ namespace System_wynajmowy
             this.bX.Size = new System.Drawing.Size(28, 28);
             this.bX.TabIndex = 2;
             this.bX.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.bX.UseVisualStyleBackColor = true;
+            this.bX.UseVisualStyleBackColor = false;
             this.bX.Click += new System.EventHandler(this.bX_Click);
             // 
             // bM
             // 
-            this.bM.BackColor = System.Drawing.Color.PaleGreen;
+            this.bM.BackColor = System.Drawing.Color.DodgerBlue;
             this.bM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bM.BackgroundImage")));
             this.bM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -169,7 +173,7 @@ namespace System_wynajmowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(199)))), ((int)(((byte)(79)))));
             this.ClientSize = new System.Drawing.Size(1313, 637);
             this.Controls.Add(this.bX);
             this.Controls.Add(this.bM);
@@ -180,7 +184,6 @@ namespace System_wynajmowy
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
