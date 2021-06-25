@@ -43,7 +43,7 @@ namespace System_wynajmowy
             this.textBoxNameE = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.textBoxIlość = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -185,21 +185,22 @@ namespace System_wynajmowy
             this.textBox1.Size = new System.Drawing.Size(27, 27);
             this.textBox1.TabIndex = 48;
             // 
-            // label4
+            // label9
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(41, 293);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 20);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "Ilość";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(41, 297);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 20);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "Ilość";
             // 
             // textBoxIlość
             // 
             this.textBoxIlość.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxIlość.Location = new System.Drawing.Point(41, 316);
+            this.textBoxIlość.Location = new System.Drawing.Point(41, 320);
             this.textBoxIlość.Name = "textBoxIlość";
+            this.textBoxIlość.ReadOnly = true;
             this.textBoxIlość.Size = new System.Drawing.Size(300, 27);
             this.textBoxIlość.TabIndex = 49;
             // 
@@ -208,7 +209,7 @@ namespace System_wynajmowy
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxIlość);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
@@ -249,7 +250,7 @@ namespace System_wynajmowy
         private System.Windows.Forms.TextBox textBoxNameE;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxIlość;
     }
 }

@@ -22,13 +22,9 @@ namespace System_wynajmowy
         }
 
 
-        #region Component Designer generated code
 
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
+
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -107,7 +103,7 @@ namespace System_wynajmowy
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(41, 340);
+            this.label6.Location = new System.Drawing.Point(39, 355);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 20);
             this.label6.TabIndex = 11;
@@ -117,7 +113,7 @@ namespace System_wynajmowy
             // 
             this.dateTimePickerDU.CalendarMonthBackground = System.Drawing.Color.Orange;
             this.dateTimePickerDU.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePickerDU.Location = new System.Drawing.Point(41, 371);
+            this.dateTimePickerDU.Location = new System.Drawing.Point(39, 386);
             this.dateTimePickerDU.Name = "dateTimePickerDU";
             this.dateTimePickerDU.Size = new System.Drawing.Size(275, 27);
             this.dateTimePickerDU.TabIndex = 12;
@@ -186,7 +182,7 @@ namespace System_wynajmowy
             // 
             this.buttonRejestracji.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.buttonRejestracji.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonRejestracji.Location = new System.Drawing.Point(93, 417);
+            this.buttonRejestracji.Location = new System.Drawing.Point(91, 432);
             this.buttonRejestracji.Name = "buttonRejestracji";
             this.buttonRejestracji.Size = new System.Drawing.Size(184, 36);
             this.buttonRejestracji.TabIndex = 31;
@@ -312,7 +308,7 @@ namespace System_wynajmowy
 
         }
 
-        #endregion
+
 
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonRejestracji;

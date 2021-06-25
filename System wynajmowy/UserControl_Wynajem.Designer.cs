@@ -26,20 +26,21 @@ namespace System_wynajmowy
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePickerDU = new System.Windows.Forms.DateTimePicker();
-            this.buttonEdycji = new System.Windows.Forms.Button();
+            this.dateTimePickerDW = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBoxAdres = new System.Windows.Forms.TextBox();
-            this.textBoxIDd = new System.Windows.Forms.TextBox();
-            this.buttonDelete = new System.Windows.Forms.Button();
+            this.textBoxnr = new System.Windows.Forms.TextBox();
+            this.textBoxSs = new System.Windows.Forms.TextBox();
             this.buttonRejestracji = new System.Windows.Forms.Button();
             this.dataGridView1k = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxKid = new System.Windows.Forms.TextBox();
+            this.textBoxSk = new System.Windows.Forms.TextBox();
             this.dataGridView2s = new System.Windows.Forms.DataGridView();
+            this.textBoxEid = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxIlość = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1k)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2s)).BeginInit();
             this.SuspendLayout();
@@ -78,31 +79,20 @@ namespace System_wynajmowy
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(41, 340);
+            this.label6.Location = new System.Drawing.Point(41, 361);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "Data rozpoczęcia ";
             // 
-            // dateTimePickerDU
+            // dateTimePickerDW
             // 
-            this.dateTimePickerDU.CalendarMonthBackground = System.Drawing.Color.Orange;
-            this.dateTimePickerDU.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePickerDU.Location = new System.Drawing.Point(41, 371);
-            this.dateTimePickerDU.Name = "dateTimePickerDU";
-            this.dateTimePickerDU.Size = new System.Drawing.Size(275, 27);
-            this.dateTimePickerDU.TabIndex = 12;
-            // 
-            // buttonEdycji
-            // 
-            this.buttonEdycji.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.buttonEdycji.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonEdycji.Location = new System.Drawing.Point(424, 234);
-            this.buttonEdycji.Name = "buttonEdycji";
-            this.buttonEdycji.Size = new System.Drawing.Size(106, 36);
-            this.buttonEdycji.TabIndex = 21;
-            this.buttonEdycji.Text = "Edytuj";
-            this.buttonEdycji.UseVisualStyleBackColor = false;
+            this.dateTimePickerDW.CalendarMonthBackground = System.Drawing.Color.Orange;
+            this.dateTimePickerDW.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePickerDW.Location = new System.Drawing.Point(41, 392);
+            this.dateTimePickerDW.Name = "dateTimePickerDW";
+            this.dateTimePickerDW.Size = new System.Drawing.Size(275, 27);
+            this.dateTimePickerDW.TabIndex = 12;
             // 
             // label7
             // 
@@ -124,43 +114,33 @@ namespace System_wynajmowy
             this.label8.TabIndex = 28;
             this.label8.Text = "SZUKAJ- Nazwa Sprzętu";
             // 
-            // textBoxAdres
+            // textBoxnr
             // 
-            this.textBoxAdres.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxAdres.Location = new System.Drawing.Point(41, 258);
-            this.textBoxAdres.Name = "textBoxAdres";
-            this.textBoxAdres.ReadOnly = true;
-            this.textBoxAdres.Size = new System.Drawing.Size(275, 27);
-            this.textBoxAdres.TabIndex = 27;
+            this.textBoxnr.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxnr.Location = new System.Drawing.Point(41, 258);
+            this.textBoxnr.Name = "textBoxnr";
+            this.textBoxnr.ReadOnly = true;
+            this.textBoxnr.Size = new System.Drawing.Size(275, 27);
+            this.textBoxnr.TabIndex = 27;
             // 
-            // textBoxIDd
+            // textBoxSs
             // 
-            this.textBoxIDd.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxIDd.Location = new System.Drawing.Point(41, 203);
-            this.textBoxIDd.Name = "textBoxIDd";
-            this.textBoxIDd.Size = new System.Drawing.Size(275, 27);
-            this.textBoxIDd.TabIndex = 26;
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.BackColor = System.Drawing.Color.Coral;
-            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonDelete.Location = new System.Drawing.Point(424, 278);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(106, 36);
-            this.buttonDelete.TabIndex = 30;
-            this.buttonDelete.Text = "Usuń";
-            this.buttonDelete.UseVisualStyleBackColor = false;
+            this.textBoxSs.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSs.Location = new System.Drawing.Point(41, 203);
+            this.textBoxSs.Name = "textBoxSs";
+            this.textBoxSs.Size = new System.Drawing.Size(275, 27);
+            this.textBoxSs.TabIndex = 26;
+            this.textBoxSs.TextChanged += new System.EventHandler(this.textBoxSs_TextChanged);
             // 
             // buttonRejestracji
             // 
             this.buttonRejestracji.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.buttonRejestracji.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonRejestracji.Location = new System.Drawing.Point(93, 417);
+            this.buttonRejestracji.Location = new System.Drawing.Point(93, 438);
             this.buttonRejestracji.Name = "buttonRejestracji";
             this.buttonRejestracji.Size = new System.Drawing.Size(184, 36);
             this.buttonRejestracji.TabIndex = 31;
-            this.buttonRejestracji.Text = "Dodaj";
+            this.buttonRejestracji.Text = "Wynajmnij";
             this.buttonRejestracji.UseVisualStyleBackColor = false;
             this.buttonRejestracji.Click += new System.EventHandler(this.buttonRejestracji_Click);
             // 
@@ -172,42 +152,26 @@ namespace System_wynajmowy
             this.dataGridView1k.RowTemplate.Height = 25;
             this.dataGridView1k.Size = new System.Drawing.Size(732, 196);
             this.dataGridView1k.TabIndex = 32;
+            this.dataGridView1k.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1k_CellContentClick);
             // 
-            // label9
+            // textBoxKid
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(41, 287);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 20);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Ilość";
+            this.textBoxKid.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxKid.ForeColor = System.Drawing.Color.Black;
+            this.textBoxKid.Location = new System.Drawing.Point(41, 150);
+            this.textBoxKid.Name = "textBoxKid";
+            this.textBoxKid.ReadOnly = true;
+            this.textBoxKid.Size = new System.Drawing.Size(275, 27);
+            this.textBoxKid.TabIndex = 40;
             // 
-            // textBox3
+            // textBoxSk
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(41, 310);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(129, 27);
-            this.textBox3.TabIndex = 37;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.ForeColor = System.Drawing.Color.Black;
-            this.textBox4.Location = new System.Drawing.Point(41, 150);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(275, 27);
-            this.textBox4.TabIndex = 40;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.Location = new System.Drawing.Point(41, 97);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(275, 27);
-            this.textBox5.TabIndex = 41;
+            this.textBoxSk.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSk.Location = new System.Drawing.Point(41, 97);
+            this.textBoxSk.Name = "textBoxSk";
+            this.textBoxSk.Size = new System.Drawing.Size(275, 27);
+            this.textBoxSk.TabIndex = 41;
+            this.textBoxSk.TextChanged += new System.EventHandler(this.textBoxSk_TextChanged);
             // 
             // dataGridView2s
             // 
@@ -217,32 +181,83 @@ namespace System_wynajmowy
             this.dataGridView2s.RowTemplate.Height = 25;
             this.dataGridView2s.Size = new System.Drawing.Size(732, 196);
             this.dataGridView2s.TabIndex = 42;
+            this.dataGridView2s.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2s_CellContentClick);
+            // 
+            // textBoxEid
+            // 
+            this.textBoxEid.Location = new System.Drawing.Point(3, 459);
+            this.textBoxEid.Name = "textBoxEid";
+            this.textBoxEid.ReadOnly = true;
+            this.textBoxEid.Size = new System.Drawing.Size(26, 23);
+            this.textBoxEid.TabIndex = 43;
+            this.textBoxEid.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(455, 158);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 30);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "Klienci";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(455, 353);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 30);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "Sprzęt";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(41, 292);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 20);
+            this.label9.TabIndex = 47;
+            this.label9.Text = "Ilość";
+            // 
+            // textBoxIlość
+            // 
+            this.textBoxIlość.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxIlość.Location = new System.Drawing.Point(41, 315);
+            this.textBoxIlość.Name = "textBoxIlość";
+            this.textBoxIlość.ReadOnly = true;
+            this.textBoxIlość.Size = new System.Drawing.Size(275, 27);
+            this.textBoxIlość.TabIndex = 46;
             // 
             // UserControl_Wynajem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
-            this.Controls.Add(this.dataGridView2s);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxIlość);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxEid);
+            this.Controls.Add(this.dataGridView2s);
+            this.Controls.Add(this.textBoxSk);
+            this.Controls.Add(this.textBoxKid);
             this.Controls.Add(this.dataGridView1k);
             this.Controls.Add(this.buttonRejestracji);
-            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBoxAdres);
-            this.Controls.Add(this.textBoxIDd);
-            this.Controls.Add(this.buttonEdycji);
-            this.Controls.Add(this.dateTimePickerDU);
+            this.Controls.Add(this.textBoxnr);
+            this.Controls.Add(this.textBoxSs);
+            this.Controls.Add(this.dateTimePickerDW);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UserControl_Wynajem";
             this.Size = new System.Drawing.Size(1286, 485);
+            this.Load += new System.EventHandler(this.UserControl_Wynajem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1k)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2s)).EndInit();
             this.ResumeLayout(false);
@@ -251,24 +266,24 @@ namespace System_wynajmowy
         }
 
 
-
-        private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonRejestracji;
         private System.Windows.Forms.DataGridView dataGridView1k;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDU;
-        private System.Windows.Forms.Button buttonEdycji;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDW;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxAdres;
-        private System.Windows.Forms.TextBox textBoxIDd;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxnr;
+        private System.Windows.Forms.TextBox textBoxSs;
+        private System.Windows.Forms.TextBox textBoxKid;
+        private System.Windows.Forms.TextBox textBoxSk;
         private System.Windows.Forms.DataGridView dataGridView2s;
+        private System.Windows.Forms.TextBox textBoxEid;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxIlość;
     }
 }

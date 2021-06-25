@@ -22,6 +22,7 @@ namespace System_wynajmowy
 
         public void diagdata()
         {
+            
             con.Open();
             string query = "select * from TabPracownicy";
             SqlDataAdapter da = new SqlDataAdapter(query, con);
@@ -30,10 +31,12 @@ namespace System_wynajmowy
             da.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
             con.Close();
+            
         }
 
         private void buttonRejestracji_Click(object sender, EventArgs e)
         {
+            
             if (textBoxName.Text == "" || textBoxNrfon.Text == "" || textBoxLogin.Text == "" || textBoxHaslo.Text == "" || textBoxHaslop.Text == "" || textBoxIDd.Text == "" || textBoxAdres.Text == "")
             {
                 MessageBox.Show("Nie wypełniono wszystkich pól");
@@ -65,7 +68,7 @@ namespace System_wynajmowy
                 }
             }
 
-
+           
 
         }
 
@@ -90,6 +93,7 @@ namespace System_wynajmowy
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            
             if (textBox1.Text == "")
             {
                 MessageBox.Show("Wybierz pracownika z tabeli klikając na niego");
@@ -109,6 +113,7 @@ namespace System_wynajmowy
                 clearAll();
 
             }
+            
         }
         int ids;
 
@@ -136,6 +141,7 @@ namespace System_wynajmowy
 
         private void buttonEdycji_Click(object sender, EventArgs e)
         {
+           
             if (textBoxName.Text == "" || textBoxNrfon.Text == "" || textBoxLogin.Text == "" || textBoxHaslo.Text == "" || textBoxHaslop.Text == "" || textBoxIDd.Text == "" || textBoxAdres.Text == "")
             {
                 MessageBox.Show("Nie wypełniono wszystkich pól");
@@ -169,6 +175,7 @@ namespace System_wynajmowy
 
                 }
             }
+            
         }
     }
 }

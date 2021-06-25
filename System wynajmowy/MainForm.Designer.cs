@@ -32,25 +32,26 @@ namespace System_wynajmowy
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonR = new System.Windows.Forms.Button();
-            this.buttonEnData = new System.Windows.Forms.Button();
-            this.buttonCData = new System.Windows.Forms.Button();
-            this.buttonRe = new System.Windows.Forms.Button();
-            this.buttonRoom = new System.Windows.Forms.Button();
+            this.buttonZ = new System.Windows.Forms.Button();
+            this.buttonP = new System.Windows.Forms.Button();
+            this.buttonw = new System.Windows.Forms.Button();
+            this.buttonK = new System.Windows.Forms.Button();
+            this.buttonS = new System.Windows.Forms.Button();
             this.bX = new System.Windows.Forms.Button();
             this.bM = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(170)))), ((int)(((byte)(139)))));
-            this.panel1.Controls.Add(this.buttonR);
-            this.panel1.Controls.Add(this.buttonEnData);
-            this.panel1.Controls.Add(this.buttonCData);
-            this.panel1.Controls.Add(this.buttonRe);
-            this.panel1.Controls.Add(this.buttonRoom);
+            this.panel1.Controls.Add(this.buttonZ);
+            this.panel1.Controls.Add(this.buttonP);
+            this.panel1.Controls.Add(this.buttonw);
+            this.panel1.Controls.Add(this.buttonK);
+            this.panel1.Controls.Add(this.buttonS);
             this.panel1.Location = new System.Drawing.Point(-1, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1316, 125);
@@ -58,82 +59,86 @@ namespace System_wynajmowy
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
-            // buttonR
+            // buttonZ
             // 
-            this.buttonR.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
-            this.buttonR.BackColor = System.Drawing.Color.LimeGreen;
-            this.buttonR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonR.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonR.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonR.Location = new System.Drawing.Point(539, 10);
-            this.buttonR.Name = "buttonR";
-            this.buttonR.Size = new System.Drawing.Size(215, 78);
-            this.buttonR.TabIndex = 1;
-            this.buttonR.Text = "Zwrot";
-            this.buttonR.UseVisualStyleBackColor = false;
+            this.buttonZ.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
+            this.buttonZ.BackColor = System.Drawing.Color.LimeGreen;
+            this.buttonZ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonZ.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonZ.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonZ.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonZ.Location = new System.Drawing.Point(539, 10);
+            this.buttonZ.Name = "buttonZ";
+            this.buttonZ.Size = new System.Drawing.Size(215, 78);
+            this.buttonZ.TabIndex = 1;
+            this.buttonZ.Text = "Zwrot";
+            this.buttonZ.UseVisualStyleBackColor = false;
+            this.buttonZ.Click += new System.EventHandler(this.buttonZ_Click);
             // 
-            // buttonEnData
+            // buttonP
             // 
-            this.buttonEnData.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
-            this.buttonEnData.BackColor = System.Drawing.Color.LimeGreen;
-            this.buttonEnData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonEnData.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonEnData.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonEnData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEnData.Location = new System.Drawing.Point(1042, 10);
-            this.buttonEnData.Name = "buttonEnData";
-            this.buttonEnData.Size = new System.Drawing.Size(215, 78);
-            this.buttonEnData.TabIndex = 3;
-            this.buttonEnData.Text = "Pracownicy";
-            this.buttonEnData.UseVisualStyleBackColor = false;
+            this.buttonP.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
+            this.buttonP.BackColor = System.Drawing.Color.LimeGreen;
+            this.buttonP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonP.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonP.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonP.Location = new System.Drawing.Point(1042, 10);
+            this.buttonP.Name = "buttonP";
+            this.buttonP.Size = new System.Drawing.Size(215, 78);
+            this.buttonP.TabIndex = 3;
+            this.buttonP.Text = "Pracownicy";
+            this.buttonP.UseVisualStyleBackColor = false;
+            this.buttonP.Click += new System.EventHandler(this.buttonP_Click);
             // 
-            // buttonCData
+            // buttonw
             // 
-            this.buttonCData.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
-            this.buttonCData.BackColor = System.Drawing.Color.LimeGreen;
-            this.buttonCData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonCData.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonCData.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCData.Location = new System.Drawing.Point(789, 10);
-            this.buttonCData.Name = "buttonCData";
-            this.buttonCData.Size = new System.Drawing.Size(215, 78);
-            this.buttonCData.TabIndex = 2;
-            this.buttonCData.Text = "Wynajem";
-            this.buttonCData.UseVisualStyleBackColor = false;
+            this.buttonw.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
+            this.buttonw.BackColor = System.Drawing.Color.LimeGreen;
+            this.buttonw.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonw.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonw.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonw.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonw.Location = new System.Drawing.Point(789, 10);
+            this.buttonw.Name = "buttonw";
+            this.buttonw.Size = new System.Drawing.Size(215, 78);
+            this.buttonw.TabIndex = 2;
+            this.buttonw.Text = "Wynajem";
+            this.buttonw.UseVisualStyleBackColor = false;
+            this.buttonw.Click += new System.EventHandler(this.buttonw_Click);
             // 
-            // buttonRe
+            // buttonK
             // 
-            this.buttonRe.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
-            this.buttonRe.BackColor = System.Drawing.Color.LimeGreen;
-            this.buttonRe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonRe.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonRe.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonRe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRe.Location = new System.Drawing.Point(286, 10);
-            this.buttonRe.Name = "buttonRe";
-            this.buttonRe.Size = new System.Drawing.Size(215, 78);
-            this.buttonRe.TabIndex = 1;
-            this.buttonRe.Text = "Klient";
-            this.buttonRe.UseVisualStyleBackColor = false;
+            this.buttonK.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
+            this.buttonK.BackColor = System.Drawing.Color.LimeGreen;
+            this.buttonK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonK.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonK.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonK.Location = new System.Drawing.Point(286, 10);
+            this.buttonK.Name = "buttonK";
+            this.buttonK.Size = new System.Drawing.Size(215, 78);
+            this.buttonK.TabIndex = 1;
+            this.buttonK.Text = "Klient";
+            this.buttonK.UseVisualStyleBackColor = false;
+            this.buttonK.Click += new System.EventHandler(this.buttonK_Click);
             // 
-            // buttonRoom
+            // buttonS
             // 
-            this.buttonRoom.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
-            this.buttonRoom.BackColor = System.Drawing.Color.LimeGreen;
-            this.buttonRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonRoom.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonRoom.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRoom.Location = new System.Drawing.Point(35, 9);
-            this.buttonRoom.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.buttonRoom.Name = "buttonRoom";
-            this.buttonRoom.Size = new System.Drawing.Size(215, 78);
-            this.buttonRoom.TabIndex = 0;
-            this.buttonRoom.Text = "Sprzęt";
-            this.buttonRoom.UseVisualStyleBackColor = false;
-            this.buttonRoom.Click += new System.EventHandler(this.buttonRoom_Click);
+            this.buttonS.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
+            this.buttonS.BackColor = System.Drawing.Color.LimeGreen;
+            this.buttonS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonS.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonS.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonS.Location = new System.Drawing.Point(41, 9);
+            this.buttonS.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.buttonS.Name = "buttonS";
+            this.buttonS.Size = new System.Drawing.Size(215, 78);
+            this.buttonS.TabIndex = 0;
+            this.buttonS.Text = "Sprzęt";
+            this.buttonS.UseVisualStyleBackColor = false;
+            this.buttonS.Click += new System.EventHandler(this.buttonS_Click);
             // 
             // bX
             // 
@@ -164,6 +169,7 @@ namespace System_wynajmowy
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.userControl_Zwrot1);
             this.panel2.Location = new System.Drawing.Point(12, 129);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1288, 486);
@@ -184,20 +190,22 @@ namespace System_wynajmowy
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonRoom;
+        private System.Windows.Forms.Button buttonS;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonR;
-        private System.Windows.Forms.Button buttonEnData;
-        private System.Windows.Forms.Button buttonCData;
-        private System.Windows.Forms.Button buttonRe;
+        private System.Windows.Forms.Button buttonZ;
+        private System.Windows.Forms.Button buttonP;
+        private System.Windows.Forms.Button buttonw;
+        private System.Windows.Forms.Button buttonK;
         private System.Windows.Forms.Button bX;
         private System.Windows.Forms.Button bM;
+
 
 
         #region Windows Form Designer generated code
@@ -210,6 +218,10 @@ namespace System_wynajmowy
 
         #endregion
 
-
+        private UserControl_equipment userControl_equipment1;
+        private UserControl_Klient userControl_Klient1;
+        private UserControl_Wynajem userControl_Wynajem1;
+        private UserControl_Pracownicy userControl_Pracownicy1;
+        private UserControl_Zwrot userControl_Zwrot1;
     }
 }

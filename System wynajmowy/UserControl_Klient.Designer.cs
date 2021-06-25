@@ -69,6 +69,7 @@ namespace System_wynajmowy
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonRejestracji = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,7 +123,7 @@ namespace System_wynajmowy
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(41, 297);
+            this.label6.Location = new System.Drawing.Point(41, 355);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 20);
             this.label6.TabIndex = 11;
@@ -132,7 +133,7 @@ namespace System_wynajmowy
             // 
             this.dateTimePickerDU.CalendarMonthBackground = System.Drawing.Color.Orange;
             this.dateTimePickerDU.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePickerDU.Location = new System.Drawing.Point(41, 328);
+            this.dateTimePickerDU.Location = new System.Drawing.Point(41, 386);
             this.dateTimePickerDU.Name = "dateTimePickerDU";
             this.dateTimePickerDU.Size = new System.Drawing.Size(300, 27);
             this.dateTimePickerDU.TabIndex = 12;
@@ -147,6 +148,7 @@ namespace System_wynajmowy
             this.buttonEdycji.TabIndex = 21;
             this.buttonEdycji.Text = "Edytuj";
             this.buttonEdycji.UseVisualStyleBackColor = false;
+            this.buttonEdycji.Click += new System.EventHandler(this.buttonEdycji_Click_1);
             // 
             // label7
             // 
@@ -194,17 +196,19 @@ namespace System_wynajmowy
             this.buttonDelete.TabIndex = 30;
             this.buttonDelete.Text = "Usuń";
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click_1);
             // 
             // buttonRejestracji
             // 
             this.buttonRejestracji.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.buttonRejestracji.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonRejestracji.Location = new System.Drawing.Point(93, 374);
+            this.buttonRejestracji.Location = new System.Drawing.Point(93, 432);
             this.buttonRejestracji.Name = "buttonRejestracji";
             this.buttonRejestracji.Size = new System.Drawing.Size(184, 36);
             this.buttonRejestracji.TabIndex = 31;
             this.buttonRejestracji.Text = "Dodaj";
             this.buttonRejestracji.UseVisualStyleBackColor = false;
+            this.buttonRejestracji.Click += new System.EventHandler(this.buttonRejestracji_Click);
             // 
             // dataGridView1
             // 
@@ -215,11 +219,21 @@ namespace System_wynajmowy
             this.dataGridView1.Size = new System.Drawing.Size(737, 394);
             this.dataGridView1.TabIndex = 32;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(391, 124);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(27, 27);
+            this.textBox1.TabIndex = 40;
+            // 
             // UserControl_Klient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonRejestracji);
             this.Controls.Add(this.buttonDelete);
@@ -244,6 +258,8 @@ namespace System_wynajmowy
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

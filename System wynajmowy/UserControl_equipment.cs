@@ -30,11 +30,12 @@ namespace System_wynajmowy
             da.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
             con.Close();
+           
         }
 
         private void buttonDodawanieE_Click(object sender, EventArgs e)
         {
-            if (textBoxIProducent.Text == "" || textBoxNameE.Text == "" || textBoxNrKatalogowy.Text == "" || textBoxIlość.Text == "" || textBoxCena.Text == "")
+            if (textBoxIProducent.Text == "" || textBoxNameE.Text == "" || textBoxNrKatalogowy.Text == "" ||  textBoxCena.Text == "" || textBoxIlość.Text =="")
             {
                 MessageBox.Show("Nie wypełniono wszystkich pól");
             }
@@ -42,12 +43,12 @@ namespace System_wynajmowy
             {
 
                 String name = textBoxNameE.Text;
-                int mo = int.Parse(textBoxIlość.Text);
+                int ilosc = int.Parse(textBoxIlość.Text);
                 String id = textBoxNrKatalogowy.Text;
                 String prod = textBoxIProducent.Text;
                 float cena = float.Parse(textBoxCena.Text);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Insert into TabSprzet ( [Nr.Katalogowy] [Nazwa] [Producent] [Cena/dzień] [Ilość] ) values ( '" + id + "','" + name + "','" + prod + "','" + cena + "','" + mo + "' )", con);
+                SqlCommand cmd = new SqlCommand("Insert into TabSprzet ( [Nr.Katalogowy] [Nazwa] [Producent] [Cena/dzień] ] [Ilosc] ) values ( '" + id + "','" + name + "','" + prod + "','" + cena + "','" + ilosc + "' )", con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Dodano nowy sprzęt");
                 con.Close();
@@ -86,7 +87,7 @@ namespace System_wynajmowy
 
         private void buttonEdycjiE_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBoxIProducent.Text == "" || textBoxNameE.Text == "" || textBoxNrKatalogowy.Text == "" || textBoxIlość.Text == "" || textBoxCena.Text == "")
+            if (textBox1.Text == "" || textBoxIProducent.Text == "" || textBoxNameE.Text == "" || textBoxNrKatalogowy.Text == "" || textBoxCena.Text == "" || textBoxIlość.Text == "")
             {
                 MessageBox.Show("Nie wypełniono wszystkich pól");
             }
@@ -94,8 +95,8 @@ namespace System_wynajmowy
             {
 
                 String name = textBoxNameE.Text;
-                int mo = int.Parse(textBoxIlość.Text);
                 String id = textBoxNrKatalogowy.Text;
+                int ilosc = int.Parse(textBoxIlość.Text);
                 String prod = textBoxIProducent.Text;
                 float cena = float.Parse(textBoxCena.Text);
 
@@ -104,7 +105,7 @@ namespace System_wynajmowy
 
 
                 con.Open();
-                string query = "update TabSprzet set [Nazwa]='" + name + "', [Ilość]='" + mo + "', [Nr.Katalogowy]='" + id + "', [Cena/dzień]='" + cena + "', [Producent]='" + prod + "' where Id =" + ids + " ";
+                string query = "update TabSprzet set [Nazwa]='" + name + "', [Nr.Katalogowy]='" + id + "', [Cena/dzień]='" + cena + "', [Producent]='" + prod + "', [Ilosc]= '"+ilosc+"' where Id =" + ids + " ";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Dane zostały zaktualizowane");
@@ -112,7 +113,7 @@ namespace System_wynajmowy
 
                 diagdata();
 
-                clearAll();
+              clearAll();
 
 
 
@@ -133,8 +134,8 @@ namespace System_wynajmowy
         {
             textBoxNameE.Clear();
             textBoxIProducent.Clear();
-            textBoxCena.Clear();
             textBoxIlość.Clear();
+            textBoxCena.Clear();
             textBoxNrKatalogowy.Clear();
             textBox1.Clear();
         }
@@ -144,7 +145,7 @@ namespace System_wynajmowy
             {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
                     textBoxNameE.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                     textBoxIProducent.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                     textBoxCena.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -160,4 +161,5 @@ namespace System_wynajmowy
             }
         }
     }
+        
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace System_wynajmowy
 {
@@ -19,11 +20,12 @@ namespace System_wynajmowy
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //  userControl_Rejes1.Visible = false;
-            //  userControl_equipment1.Visible = false;
-            // userControl_Pracownicy1.Visible = false;
-            // userControl_Wynajem2.Visible = false;
-            //  userControl_Zwrot2.Visible = false;
+            //userControl_equipment1.Visible = false;
+            //userControl_Klient1.Visible = false;
+            //userControl_Pracownicy1.Visible = false;
+           // userControl_Wynajem1.Visible = false;
+           // userControl_Zwrot1.Visible = false;
+            
 
         }
 
@@ -80,39 +82,34 @@ namespace System_wynajmowy
 
         }
 
-
-
-        private void buttonRe_Click(object sender, EventArgs e)
+        private void buttonS_Click(object sender, EventArgs e)
         {
-            //  userControl_Rejes1.Visible = true;
-            //  userControl_Rejes1.BringToFront();
+            userControl_equipment1.Visible = true;
+            userControl_equipment1.BringToFront();
         }
 
-        private void buttonRoom_Click(object sender, EventArgs e)
+        private void buttonK_Click(object sender, EventArgs e)
         {
-            //  userControl_equipment1.Visible = true;
-            // userControl_equipment1.BringToFront();
+            userControl_Klient1.Visible = true;
+            userControl_Klient1.BringToFront();
         }
 
-        private void buttonEnData_Click(object sender, EventArgs e)
+        private void buttonZ_Click(object sender, EventArgs e)
         {
-            // userControl_Pracownicy1.Visible = true;
-            //  userControl_Pracownicy1.BringToFront();
+            userControl_Zwrot1.Visible = true;
+            userControl_Zwrot1.BringToFront();
         }
 
-        private void buttonCData_Click(object sender, EventArgs e)
+        private void buttonw_Click(object sender, EventArgs e)
         {
-           // userControl_Wynajem1.Visible = true;
-           // userControl_Wynajem1.BringToFront();
+            userControl_Wynajem1.Visible = true;
+            userControl_Wynajem1.BringToFront();
         }
 
-        private void buttonR_Click(object sender, EventArgs e)
+        private void buttonP_Click(object sender, EventArgs e)
         {
-          //  userControl_Zwrot1.Visible = true;
-           // userControl_Zwrot1.BringToFront();
+            userControl_Pracownicy1.Visible = true;
+            userControl_Pracownicy1.BringToFront();
         }
-
-
-
     }
 }
