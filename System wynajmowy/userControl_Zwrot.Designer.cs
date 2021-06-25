@@ -42,6 +42,7 @@ namespace System_wynajmowy
             this.textBoxWZID = new System.Windows.Forms.TextBox();
             this.textBoxEid = new System.Windows.Forms.TextBox();
             this.textBoxIle = new System.Windows.Forms.TextBox();
+            this.textBoxdata = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1W)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2Z)).BeginInit();
             this.SuspendLayout();
@@ -158,6 +159,8 @@ namespace System_wynajmowy
             // 
             // dataGridView1W
             // 
+            this.dataGridView1W.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1W.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1W.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1W.Location = new System.Drawing.Point(536, 74);
             this.dataGridView1W.Name = "dataGridView1W";
@@ -186,6 +189,8 @@ namespace System_wynajmowy
             // 
             // dataGridView2Z
             // 
+            this.dataGridView2Z.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2Z.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView2Z.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2Z.Location = new System.Drawing.Point(536, 278);
             this.dataGridView2Z.Name = "dataGridView2Z";
@@ -241,11 +246,21 @@ namespace System_wynajmowy
             this.textBoxIle.TabIndex = 51;
             this.textBoxIle.Visible = false;
             // 
+            // textBoxdata
+            // 
+            this.textBoxdata.Location = new System.Drawing.Point(104, 28);
+            this.textBoxdata.Name = "textBoxdata";
+            this.textBoxdata.ReadOnly = true;
+            this.textBoxdata.Size = new System.Drawing.Size(27, 23);
+            this.textBoxdata.TabIndex = 52;
+            this.textBoxdata.Visible = false;
+            // 
             // UserControl_Zwrot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
+            this.Controls.Add(this.textBoxdata);
             this.Controls.Add(this.textBoxIle);
             this.Controls.Add(this.textBoxEid);
             this.Controls.Add(this.textBoxWZID);
@@ -297,5 +312,6 @@ namespace System_wynajmowy
         private System.Windows.Forms.TextBox textBoxWZID;
         private System.Windows.Forms.TextBox textBoxEid;
         private System.Windows.Forms.TextBox textBoxIle;
+        private System.Windows.Forms.TextBox textBoxdata;
     }
 }

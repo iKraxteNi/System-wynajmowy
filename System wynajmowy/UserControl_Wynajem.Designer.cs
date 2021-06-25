@@ -35,12 +35,12 @@ namespace System_wynajmowy
             this.dataGridView1k = new System.Windows.Forms.DataGridView();
             this.textBoxKid = new System.Windows.Forms.TextBox();
             this.textBoxSk = new System.Windows.Forms.TextBox();
-            this.dataGridView2s = new System.Windows.Forms.DataGridView();
             this.textBoxEid = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxIlość = new System.Windows.Forms.TextBox();
+            this.dataGridView2s = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1k)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2s)).BeginInit();
             this.SuspendLayout();
@@ -146,6 +146,8 @@ namespace System_wynajmowy
             // 
             // dataGridView1k
             // 
+            this.dataGridView1k.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1k.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1k.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1k.Location = new System.Drawing.Point(536, 74);
             this.dataGridView1k.Name = "dataGridView1k";
@@ -172,16 +174,6 @@ namespace System_wynajmowy
             this.textBoxSk.Size = new System.Drawing.Size(275, 27);
             this.textBoxSk.TabIndex = 41;
             this.textBoxSk.TextChanged += new System.EventHandler(this.textBoxSk_TextChanged);
-            // 
-            // dataGridView2s
-            // 
-            this.dataGridView2s.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2s.Location = new System.Drawing.Point(536, 278);
-            this.dataGridView2s.Name = "dataGridView2s";
-            this.dataGridView2s.RowTemplate.Height = 25;
-            this.dataGridView2s.Size = new System.Drawing.Size(732, 196);
-            this.dataGridView2s.TabIndex = 42;
-            this.dataGridView2s.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2s_CellContentClick);
             // 
             // textBoxEid
             // 
@@ -227,21 +219,34 @@ namespace System_wynajmowy
             this.textBoxIlość.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxIlość.Location = new System.Drawing.Point(41, 315);
             this.textBoxIlość.Name = "textBoxIlość";
-            this.textBoxIlość.ReadOnly = true;
             this.textBoxIlość.Size = new System.Drawing.Size(275, 27);
             this.textBoxIlość.TabIndex = 46;
+            this.textBoxIlość.TextChanged += new System.EventHandler(this.textBoxIlość_TextChanged);
+            this.textBoxIlość.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxIlość_KeyPress);
+            // 
+            // dataGridView2s
+            // 
+            this.dataGridView2s.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2s.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView2s.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2s.Location = new System.Drawing.Point(536, 276);
+            this.dataGridView2s.Name = "dataGridView2s";
+            this.dataGridView2s.RowTemplate.Height = 25;
+            this.dataGridView2s.Size = new System.Drawing.Size(732, 196);
+            this.dataGridView2s.TabIndex = 48;
+            this.dataGridView2s.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2s_CellContentClick_1);
             // 
             // UserControl_Wynajem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
+            this.Controls.Add(this.dataGridView2s);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxIlość);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxEid);
-            this.Controls.Add(this.dataGridView2s);
             this.Controls.Add(this.textBoxSk);
             this.Controls.Add(this.textBoxKid);
             this.Controls.Add(this.dataGridView1k);
@@ -258,6 +263,8 @@ namespace System_wynajmowy
             this.Name = "UserControl_Wynajem";
             this.Size = new System.Drawing.Size(1286, 485);
             this.Load += new System.EventHandler(this.UserControl_Wynajem_Load);
+            this.Enter += new System.EventHandler(this.UserControl_Wynajem_Enter);
+            this.Leave += new System.EventHandler(this.UserControl_Wynajem_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1k)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2s)).EndInit();
             this.ResumeLayout(false);
@@ -279,11 +286,11 @@ namespace System_wynajmowy
         private System.Windows.Forms.TextBox textBoxSs;
         private System.Windows.Forms.TextBox textBoxKid;
         private System.Windows.Forms.TextBox textBoxSk;
-        private System.Windows.Forms.DataGridView dataGridView2s;
         private System.Windows.Forms.TextBox textBoxEid;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxIlość;
+        private System.Windows.Forms.DataGridView dataGridView2s;
     }
 }

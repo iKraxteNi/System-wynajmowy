@@ -20,11 +20,11 @@ namespace System_wynajmowy
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //userControl_equipment1.Visible = false;
-            //userControl_Klient1.Visible = false;
-            //userControl_Pracownicy1.Visible = false;
-           // userControl_Wynajem1.Visible = false;
-           // userControl_Zwrot1.Visible = false;
+            userControl_equipment1.Visible = false;
+            userControl_Klient1.Visible = false;
+            userControl_Pracownicy1.Visible = false;
+            userControl_Wynajem1.Visible = false;
+            userControl_Zwrot1.Visible = false;
             
 
         }
@@ -74,42 +74,52 @@ namespace System_wynajmowy
             mouseDown = false;
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            mouseDown = true;
-            mouseinX = MousePosition.X - Bounds.X;
-            mouseinY = MousePosition.Y - Bounds.Y;
 
-        }
 
         private void buttonS_Click(object sender, EventArgs e)
         {
             userControl_equipment1.Visible = true;
             userControl_equipment1.BringToFront();
+            userControl_equipment1.diagdata();
         }
 
         private void buttonK_Click(object sender, EventArgs e)
         {
             userControl_Klient1.Visible = true;
             userControl_Klient1.BringToFront();
+            userControl_Klient1.diagdata();
+            
         }
 
         private void buttonZ_Click(object sender, EventArgs e)
         {
             userControl_Zwrot1.Visible = true;
             userControl_Zwrot1.BringToFront();
+            userControl_Zwrot1.diagdataW();
+            userControl_Zwrot1.diagdataZ();
         }
 
         private void buttonw_Click(object sender, EventArgs e)
         {
             userControl_Wynajem1.Visible = true;
             userControl_Wynajem1.BringToFront();
+            userControl_Wynajem1.diagdata();
+            userControl_Wynajem1.diagdatas();
         }
 
         private void buttonP_Click(object sender, EventArgs e)
         {
             userControl_Pracownicy1.Visible = true;
             userControl_Pracownicy1.BringToFront();
+            userControl_Pracownicy1.diagdata();
+        }
+
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            mouseinX = MousePosition.X - Bounds.X;
+            mouseinY = MousePosition.Y - Bounds.Y;
+
         }
     }
 }

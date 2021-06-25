@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+
 
 namespace System_wynajmowy
 {
     public partial class UserControl_Pracownicy : UserControl
     {
-        SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\KraxteN\Documents\Equipment rental system DB.mdf;Integrated Security = True; Connect Timeout = 30");
+        ClassFunctionDB fn = new ClassFunctionDB();
+        String query;
 
         public UserControl_Pracownicy()
         {
@@ -23,15 +24,12 @@ namespace System_wynajmowy
         public void diagdata()
         {
             
-            con.Open();
-            string query = "select * from TabPracownicy";
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(da);
-            var ds = new DataSet();
-            da.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
-            con.Close();
             
+            query = "select * from TabPracownicy";
+            
+            DataSet ds = fn.GetData(query);
+            dataGridView1.DataSource = ds.Tables[0];
+
         }
 
         private void buttonRejestracji_Click(object sender, EventArgs e)
@@ -53,14 +51,13 @@ namespace System_wynajmowy
                     String mobile = textBoxNrfon.Text;
                     String id = textBoxIDd.Text;
                     String adress = textBoxAdres.Text;
-                    String datau = dateTimePickerDU.Text;
                     String haslo = textBoxHaslo.Text;
                     String login = textBoxLogin.Text;
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("Insert into TabPracownicy ( [Imię i Nazwisko], [Nr. telefonu], [ID dowodu], Adres, Login, Hasło, [Data urodzenia]) values ( '" + name + "','" + mobile + "','" + id + "','" + adress + "','" + login + "','" + haslo + "','" + datau + "' )", con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Zarejestrowano użytkownika");
-                    con.Close();
+                   
+                    query = "Insert into TabPracownicy ( [Imię i Nazwisko], [Nr. telefonu], [ID dowodu], Adres, Login, Hasło, [Data urodzenia]) values ( '" + name + "','" + mobile + "','" + id + "','" + adress + "','" + login + "','" + haslo + "' )";
+                    
+                    fn.setData(query, "Zarejestrowano użytkownika");
+                    
 
                     diagdata();
 
@@ -101,12 +98,10 @@ namespace System_wynajmowy
             }
             else
             {
-                con.Open();
-                string query = "delete from TabPracownicy where Id =" + ids + "";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Usunięto");
-                con.Close();
+                
+                 query = "delete from TabPracownicy where Id =" + ids + "";
+               
+                fn.setData(query, "Usunięto");
 
                 diagdata();
 
@@ -120,14 +115,15 @@ namespace System_wynajmowy
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             {
-                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                try
+                {
+                    if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
                     textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                     textBoxName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                     textBoxNrfon.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                     textBoxIDd.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                     textBoxAdres.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    //dateTimePickerDU.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString() ;
                     textBoxHaslo.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
                     textBoxLogin.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
 
@@ -135,6 +131,14 @@ namespace System_wynajmowy
                     ids = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
 
                 }
+
+                }
+                catch (Exception)
+                {
+                    textBox1.Text = "x";
+                    
+                }
+                
 
             }
         }
@@ -158,15 +162,13 @@ namespace System_wynajmowy
                     String mobile = textBoxNrfon.Text;
                     String id = textBoxIDd.Text;
                     String adress = textBoxAdres.Text;
-                    String datau = dateTimePickerDU.Text;
+                    
                     String haslo = textBoxHaslo.Text;
                     String login = textBoxLogin.Text;
-                    con.Open();
-                    string query = "update TabPracownicy set [Imię i Nazwisko]='" + name + "', [Nr. telefonu]='" + mobile + "', [ID dowodu]='" + id + "', Adres='" + adress + "', Login='" + login + "', Hasło='" + haslo + "', [Data urodzenia]='" + datau + "' where Id =" + ids + " ";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Dane zostały zaktualizowane");
-                    con.Close();
+                   
+                    query = "update TabPracownicy set [Imię i Nazwisko]='" + name + "', [Nr. telefonu]='" + mobile + "', [ID dowodu]='" + id + "', Adres='" + adress + "', Login='" + login + "', Hasło='" + haslo + "' where Id =" + ids + " ";
+                    
+                    fn.setData(query, "Dane zostały zaktualizowane"); ;
 
                     diagdata();
 

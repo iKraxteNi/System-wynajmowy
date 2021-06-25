@@ -39,8 +39,6 @@ namespace System_wynajmowy
         private System.Windows.Forms.TextBox textBoxNrfon;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDU;
         private System.Windows.Forms.Button buttonEdycji;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -59,8 +57,6 @@ namespace System_wynajmowy
             this.textBoxNrfon = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePickerDU = new System.Windows.Forms.DateTimePicker();
             this.buttonEdycji = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -118,25 +114,6 @@ namespace System_wynajmowy
             this.label3.Size = new System.Drawing.Size(87, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Nr. telefonu";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(41, 355);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 20);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Data urodzenia";
-            // 
-            // dateTimePickerDU
-            // 
-            this.dateTimePickerDU.CalendarMonthBackground = System.Drawing.Color.Orange;
-            this.dateTimePickerDU.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePickerDU.Location = new System.Drawing.Point(41, 386);
-            this.dateTimePickerDU.Name = "dateTimePickerDU";
-            this.dateTimePickerDU.Size = new System.Drawing.Size(300, 27);
-            this.dateTimePickerDU.TabIndex = 12;
             // 
             // buttonEdycji
             // 
@@ -212,12 +189,15 @@ namespace System_wynajmowy
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(536, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(737, 394);
             this.dataGridView1.TabIndex = 32;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // textBox1
             // 
@@ -242,8 +222,6 @@ namespace System_wynajmowy
             this.Controls.Add(this.textBoxAdres);
             this.Controls.Add(this.textBoxIDd);
             this.Controls.Add(this.buttonEdycji);
-            this.Controls.Add(this.dateTimePickerDU);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNrfon);
@@ -251,6 +229,8 @@ namespace System_wynajmowy
             this.Controls.Add(this.label1);
             this.Name = "UserControl_Klient";
             this.Size = new System.Drawing.Size(1286, 485);
+            this.Load += new System.EventHandler(this.UserControl_Klient_Load);
+            this.Leave += new System.EventHandler(this.UserControl_Klient_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

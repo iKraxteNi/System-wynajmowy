@@ -50,6 +50,8 @@ namespace System_wynajmowy
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(537, 77);
             this.dataGridView1.Name = "dataGridView1";
@@ -200,17 +202,16 @@ namespace System_wynajmowy
             this.textBoxIlość.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxIlość.Location = new System.Drawing.Point(41, 320);
             this.textBoxIlość.Name = "textBoxIlość";
-            this.textBoxIlość.ReadOnly = true;
             this.textBoxIlość.Size = new System.Drawing.Size(300, 27);
-            this.textBoxIlość.TabIndex = 49;
+            this.textBoxIlość.TabIndex = 51;
             // 
             // UserControl_equipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxIlość);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonDodawanieE);
@@ -228,6 +229,7 @@ namespace System_wynajmowy
             this.Name = "UserControl_equipment";
             this.Size = new System.Drawing.Size(1286, 485);
             this.Load += new System.EventHandler(this.UserControl_equipment_Load);
+            this.VisibleChanged += new System.EventHandler(this.UserControl_equipment_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

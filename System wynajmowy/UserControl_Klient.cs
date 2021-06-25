@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+
+
 
 namespace System_wynajmowy
 {
     public partial class UserControl_Klient : UserControl
     {
-        SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\KraxteN\Documents\Equipment rental system DB.mdf;Integrated Security = True; Connect Timeout = 30");
+
+        ClassFunctionDB fn = new ClassFunctionDB();
+        String query;
 
         public UserControl_Klient()
         {
@@ -22,20 +25,17 @@ namespace System_wynajmowy
 
         public void diagdata()
         {
-            con.Open();
-            string query = "select * from TabKlient";
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(da);
-            var ds = new DataSet();
-            da.Fill(ds);
+            
+            query = "select * from TabKlient";
+            DataSet ds = fn.GetData(query);
             dataGridView1.DataSource = ds.Tables[0];
-            con.Close();
+            
            
         }
 
         private void buttonRejestracji_Click(object sender, EventArgs e)
         {
-            if (textBoxName.Text == "" || textBoxNrfon.Text == ""  || textBoxIDd.Text == "" || textBoxAdres.Text == ""|| dateTimePickerDU.Text =="")
+            if (textBoxName.Text == "" || textBoxNrfon.Text == ""  || textBoxIDd.Text == "" || textBoxAdres.Text == "")
             {
                 MessageBox.Show("Nie wypełniono wszystkich pól");
             }
@@ -46,17 +46,18 @@ namespace System_wynajmowy
                     String mobile = textBoxNrfon.Text;
                     String id = textBoxIDd.Text;
                     String adress = textBoxAdres.Text;
-                    String datau = dateTimePickerDU.Text;
+                    
 
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("Insert into TabKlient ( [Imię i Nazwisko.], [Nr.telefonu.], [ID dowodu.], [Adres.], [Data urodzenia]) values ( '" + name + "','" + mobile + "','" + id + "','" + adress + "','" + datau + "' )", con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Zarejestrowano użytkownika");
-                    con.Close();
+                    
+                    query = "Insert into TabKlient ( [Imię i Nazwisko.], [NrTelefonu.], [ID dowodu.], [Adres.]) values ( '" + name + "','" + mobile + "','" + id + "','" + adress + "' )";
+                    fn.setData(query, "Zarejestrowano użytkownika");    
 
-                    diagdata();
+                    
+                    
 
-                    clearAll();
+                diagdata();
+
+                clearAll();
                 
             }
 
@@ -75,35 +76,10 @@ namespace System_wynajmowy
             
         }
 
-        private void UserControl_Pracownicy_Load(object sender, EventArgs e)
-        {
-            diagdata();
-
-            clearAll();
-        }
 
         int ids;
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            {
-                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-                {
-                    textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    textBoxName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    textBoxNrfon.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    textBoxIDd.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                    textBoxAdres.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    //dateTimePickerDU.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString() ;
-
-
-
-                    ids = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-
-                }
-
-            }
-        }
+     
 
 
 
@@ -116,12 +92,10 @@ namespace System_wynajmowy
             }
             else
             {
-                con.Open();
-                string query = "delete from TabKlient where Id =" + ids + "";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Usunięto");
-                con.Close();
+                
+                query = "delete from TabKlient where KId =" + ids + "";
+                fn.setData(query, "Usunięto");
+                
 
                 diagdata();
 
@@ -133,7 +107,7 @@ namespace System_wynajmowy
 
         private void buttonEdycji_Click_1(object sender, EventArgs e)
         {
-                if (textBoxName.Text == "" || textBoxNrfon.Text == "" || textBoxIDd.Text == "" || textBoxAdres.Text == "" || dateTimePickerDU.Text == "" || textBox1.Text == "")
+                if (textBoxName.Text == "" || textBoxNrfon.Text == "" || textBoxIDd.Text == "" || textBoxAdres.Text == "" || textBox1.Text == "")
                 {
                     MessageBox.Show("Nie wypełniono wszystkich pól");
                 }
@@ -144,14 +118,13 @@ namespace System_wynajmowy
                     String mobile = textBoxNrfon.Text;
                     String id = textBoxIDd.Text;
                     String adress = textBoxAdres.Text;
-                    String datau = dateTimePickerDU.Text;
+                    
                 
-                    con.Open();
-                    string query = "update TabKlient set [Imię i Nazwisko.]='" + name + "', [Nr.telefonu.]='" + mobile + "', [ID dowodu.]='" + id + "', [Adres.]='" + adress + "', [Data urodzenia.]='" + datau + "' where KId =" + ids + " ";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Dane zostały zaktualizowane");
-                    con.Close();
+                    
+                     query = "update TabKlient set [Imię i Nazwisko.]='" + name + "', [NrTelefonu.]='" + mobile + "', [ID dowodu.]='" + id + "', [Adres.]='" + adress + "' where KId =" + ids + " ";
+                    fn.setData(query, "Dane zostały zaktualizowane");
+                    
+                   
 
                     diagdata();
 
@@ -162,6 +135,48 @@ namespace System_wynajmowy
                 }
             
 
+        }
+
+        private void UserControl_Klient_Leave(object sender, EventArgs e)
+        {
+            clearAll();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            {
+                try
+                {
+                    if(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    textBoxName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    textBoxNrfon.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    textBoxIDd.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    textBoxAdres.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+
+
+
+                    ids = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                }
+
+                }
+                catch (Exception)
+                {
+                    textBox1.Text = "x";
+                    
+                } 
+
+            }
+
+        }
+
+        private void UserControl_Klient_Load(object sender, EventArgs e)
+        {
+            diagdata();
+            clearAll();
         }
     }
 }

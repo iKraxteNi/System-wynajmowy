@@ -39,9 +39,13 @@ namespace System_wynajmowy
             this.buttonS = new System.Windows.Forms.Button();
             this.bX = new System.Windows.Forms.Button();
             this.bM = new System.Windows.Forms.Button();
+            this.userControl_Wynajem1 = new System_wynajmowy.UserControl_Wynajem();
+            this.userControl_equipment1 = new System_wynajmowy.UserControl_equipment();
+            this.userControl_Klient1 = new System_wynajmowy.UserControl_Klient();
+            this.userControl_Pracownicy1 = new System_wynajmowy.UserControl_Pracownicy();
+            this.userControl_Zwrot1 = new System_wynajmowy.UserControl_Zwrot();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,6 +60,7 @@ namespace System_wynajmowy
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1316, 125);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
@@ -170,10 +175,54 @@ namespace System_wynajmowy
             // panel2
             // 
             this.panel2.Controls.Add(this.userControl_Zwrot1);
+            this.panel2.Controls.Add(this.userControl_Wynajem1);
+            this.panel2.Controls.Add(this.userControl_equipment1);
+            this.panel2.Controls.Add(this.userControl_Klient1);
+            this.panel2.Controls.Add(this.userControl_Pracownicy1);
             this.panel2.Location = new System.Drawing.Point(12, 129);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1288, 486);
             this.panel2.TabIndex = 1;
+            // 
+            // userControl_Wynajem1
+            // 
+            this.userControl_Wynajem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
+            this.userControl_Wynajem1.Location = new System.Drawing.Point(0, 1);
+            this.userControl_Wynajem1.Name = "userControl_Wynajem1";
+            this.userControl_Wynajem1.Size = new System.Drawing.Size(1286, 485);
+            this.userControl_Wynajem1.TabIndex = 3;
+            // 
+            // userControl_equipment1
+            // 
+            this.userControl_equipment1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
+            this.userControl_equipment1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_equipment1.Name = "userControl_equipment1";
+            this.userControl_equipment1.Size = new System.Drawing.Size(1286, 485);
+            this.userControl_equipment1.TabIndex = 2;
+            // 
+            // userControl_Klient1
+            // 
+            this.userControl_Klient1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
+            this.userControl_Klient1.Location = new System.Drawing.Point(0, 1);
+            this.userControl_Klient1.Name = "userControl_Klient1";
+            this.userControl_Klient1.Size = new System.Drawing.Size(1286, 485);
+            this.userControl_Klient1.TabIndex = 1;
+            // 
+            // userControl_Pracownicy1
+            // 
+            this.userControl_Pracownicy1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
+            this.userControl_Pracownicy1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Pracownicy1.Name = "userControl_Pracownicy1";
+            this.userControl_Pracownicy1.Size = new System.Drawing.Size(1286, 485);
+            this.userControl_Pracownicy1.TabIndex = 0;
+            // 
+            // userControl_Zwrot1
+            // 
+            this.userControl_Zwrot1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
+            this.userControl_Zwrot1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_Zwrot1.Name = "userControl_Zwrot1";
+            this.userControl_Zwrot1.Size = new System.Drawing.Size(1286, 485);
+            this.userControl_Zwrot1.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -190,7 +239,6 @@ namespace System_wynajmowy
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -218,10 +266,10 @@ namespace System_wynajmowy
 
         #endregion
 
-        private UserControl_equipment userControl_equipment1;
         private UserControl_Klient userControl_Klient1;
-        private UserControl_Wynajem userControl_Wynajem1;
         private UserControl_Pracownicy userControl_Pracownicy1;
+        private UserControl_equipment userControl_equipment1;
+        private UserControl_Wynajem userControl_Wynajem1;
         private UserControl_Zwrot userControl_Zwrot1;
     }
 }

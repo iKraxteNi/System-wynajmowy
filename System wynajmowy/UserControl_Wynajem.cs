@@ -13,51 +13,32 @@ namespace System_wynajmowy
 {
     public partial class UserControl_Wynajem : UserControl
     {
-        SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\KraxteN\Documents\Equipment rental system DB.mdf;Integrated Security = True; Connect Timeout = 30");
+        ClassFunctionDB fn = new ClassFunctionDB();
+        String query;
+        
         public UserControl_Wynajem()
         {
             InitializeComponent();
         }
 
-        /* private void FillClientDate()
-         {
-             con.Open();
-             string query = "select * from TabKlient where KId ="+textBoxKid.Text+"";
-             SqlCommand cmd = new SqlCommand(query, con);
-             DataTable dt = new DataTable();
-             SqlDataAdapter da = new SqlDataAdapter(query, con);
-             da.Fill(dt);
-             foreach(DataRow dr in dt.Rows)
-             {
-
-             }
-             con.Close();
-         }
-        */
          
         public void diagdata()
         {
-           con.Open();
-            string query = "select * from TabKlient";
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(da);
-            var ds = new DataSet();
-            da.Fill(ds);
+           
+            query = "select * from TabKlient";
+            DataSet ds = fn.GetData(query);
+            
             dataGridView1k.DataSource = ds.Tables[0];
-            con.Close();
+            
   
         }
         public void diagdatas()
         {
 
-            con.Open();
-            string query = "select * from TabSprzet";
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(da);
-            var ds = new DataSet();
-            da.Fill(ds);
-            dataGridView1k.DataSource = ds.Tables[0];
-            con.Close();
+            query = "select * from TabSprzet";
+            DataSet ds = fn.GetData(query);
+            dataGridView2s.DataSource = ds.Tables[0];
+
 
         }
         private void buttonRejestracji_Click(object sender, EventArgs e)
@@ -73,28 +54,24 @@ namespace System_wynajmowy
                 int ile;
 
                 ilew = int.Parse(textBoxIlość.Text);
-                con.Open();
-                string query = "select * from TabSprzet where EId =" + eid + "";
-                SqlCommand cmd1 = new SqlCommand(query, con);
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(query, con);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    ile = Convert.ToInt32(dr["ile"].ToString());
+                
+                 query = "select * from TabSprzet where EId =" + eid + "";
+                  DataSet ds = fn.GetData(query);
 
+                    ile = Convert.ToInt32(ds.Tables[0].Rows[0][4].ToString());
+
+ 
                     if (ile < ilew)
                     {
                         MessageBox.Show("Nie ma tyle na sprzętu stanie");
                     }
                     else
                     {
-                        string dateTimeW = dateTimePickerDW.Value.Day.ToString() + "/" + dateTimePickerDW.Value.Month.ToString() + "/" + dateTimePickerDW.Value.Year.ToString();
-                        con.Open();
-                        SqlCommand cmd = new SqlCommand("Insert into TabWynajmu values ( '" + kid + "','" + textBoxSk.Text + "','" + textBoxSs.Text + "','" + textBoxnr.Text + "','" + textBoxEid + "','" + dateTimeW + "',"+textBoxIlość+" )", con);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Wynajęto");
-                        con.Close();
+                        string dateTimeW = dateTimePickerDW.Value.Year.ToString() + "-" + dateTimePickerDW.Value.Month.ToString() + "-" + dateTimePickerDW.Value.Day.ToString();
+
+                        query =("Insert into TabWynajmu values ( '" + kid + "','" + textBoxSk.Text + "','" + textBoxSs.Text + "','" + textBoxnr.Text + "','" + textBoxEid.Text + "','" + dateTimeW + "','"+textBoxIlość.Text+"' )");
+                        fn.setData(query, "Wynajęto");
+                    
 
                         UpdateIlosc();
 
@@ -105,7 +82,7 @@ namespace System_wynajmowy
 
                     }
 
-                }
+                
 
 
 
@@ -121,28 +98,19 @@ namespace System_wynajmowy
         {
             
             int ile, newile;
-            con.Open();
-            string query = "select * from TabSprzet where EId =" + eid + "";
-            SqlCommand cmd = new SqlCommand(query, con);
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
-            {
-                ile = Convert.ToInt32(dr["ile"].ToString());
-                int ilew = int.Parse(textBoxIlość.Text);
+            query = "select * from TabSprzet where EId =" + eid + "";
+            DataSet ds = fn.GetData(query);
+
+            ile =  Convert.ToInt32(ds.Tables[0].Rows[0][4].ToString());
+
+
+            int ilew = int.Parse(textBoxIlość.Text);
                 newile = ile - ilew;
-                string query1 = "update TabSprzet set ilosc =  " + newile + " where EId= " + textBoxEid.Text + "";
-                SqlCommand cmd1 = new SqlCommand(query1, con);
-                cmd1.ExecuteNonQuery();
-            }
+                query = "update TabSprzet set ilosc =  " + newile + " where EId= " + textBoxEid.Text + "";
+                 fn.setData(query, "Dane zostały zaktualizowane");
 
 
 
-
-
-            con.Close();
-            
         }
 
         int kid;
@@ -150,60 +118,50 @@ namespace System_wynajmowy
 
         private void dataGridView1k_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            if (dataGridView1k.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            try
             {
-                textBoxSk.Text = dataGridView1k.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textBoxKid.Text = dataGridView1k.Rows[e.RowIndex].Cells[0].Value.ToString();
+                if (dataGridView1k.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
 
-                kid = int.Parse(dataGridView1k.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    textBoxKid.Text = dataGridView1k.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                    kid = int.Parse(dataGridView1k.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                    textBoxSk.Text = dataGridView1k.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                }
+
 
             }
-
-        }
-
-
-
-        private void dataGridView2s_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            if (dataGridView1k.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            catch (Exception)
             {
-                textBoxSs.Text = dataGridView1k.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textBoxnr.Text = dataGridView1k.Rows[e.RowIndex].Cells[0].Value.ToString();
-                textBoxEid.Text = dataGridView1k.Rows[e.RowIndex].Cells[6].Value.ToString();
 
-                kid = int.Parse(dataGridView1k.Rows[e.RowIndex].Cells[6].Value.ToString());
+                textBoxKid.Text = "x";
             }
+           
         }
+
 
 
 
         private void textBoxSk_TextChanged(object sender, EventArgs e)
         {
             
-            con.Open();
-            string query = "Select TabKlient.KId, TabKlient.Imię i Nazwisko., TabKlient.Nr. telefonu.,TabKlient.ID dowodu.,TabKlient.Adres. from TabKlient where [Imię i Nazwisko.] like'" + textBoxSk.Text + "%' ";
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(da);
-            var ds = new DataSet();
-            da.Fill(ds);
+
+             query = "Select TabKlient.[KId], TabKlient.[Imię i Nazwisko.], TabKlient.[NrTelefonu.],TabKlient.[ID dowodu.],TabKlient.[Adres.] from TabKlient where [Imię i Nazwisko.] like'" + textBoxSk.Text + "%' ";
+            DataSet ds = fn.GetData(query);
             dataGridView1k.DataSource = ds.Tables[0];
-            con.Close();
+
             
         }
 
         private void textBoxSs_TextChanged(object sender, EventArgs e)
         {
             
-            con.Open();
-            string query = "Select TabSprzet.Nr.Katalogowy, TabSprzet.Nazwa, TabSprzet.Producent, TabSprzet.Cena/dzień, TabSprzet.Ilość, TabSprzet.EId from TabSprzet where [Nazwa] like'" + textBoxSk.Text + "%' ";
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(da);
-            var ds = new DataSet();
-            da.Fill(ds);
+
+            query = "Select TabSprzet.[Nr.Katalogowy], TabSprzet.[Nazwa], TabSprzet.[Producent], TabSprzet.[Cena/dzień], TabSprzet.[Ilosc], TabSprzet.[EId] from TabSprzet where [Nazwa] like'" + textBoxSs.Text + "%' ";
+            DataSet ds = fn.GetData(query);
             dataGridView2s.DataSource = ds.Tables[0];
-            con.Close();
             
         }
 
@@ -211,6 +169,7 @@ namespace System_wynajmowy
         {
             diagdata();
             diagdatas();
+            clearAll();
 
         }
 
@@ -222,6 +181,58 @@ namespace System_wynajmowy
             textBoxnr.Clear();
             textBoxSk.Clear();
             textBoxSs.Clear();
+        }
+
+        private void UserControl_Wynajem_Leave(object sender, EventArgs e)
+        {
+            clearAll();
+        }
+
+        private void textBoxIlość_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxIlość.Text, "  ^ [0-9]"))
+            {
+                textBoxIlość.Text = "";
+            }
+        }
+
+        private void textBoxIlość_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void UserControl_Wynajem_Enter(object sender, EventArgs e)
+        {
+            diagdatas();
+            diagdata();
+        }
+
+        private void dataGridView2s_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridView2s.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+
+                textBoxnr.Text = dataGridView2s.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textBoxEid.Text = dataGridView2s.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+                eid = int.Parse(dataGridView2s.Rows[e.RowIndex].Cells[5].Value.ToString());
+
+                textBoxSs.Text = dataGridView2s.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+
+
+            }
+            catch (Exception)
+            {
+                textBoxEid.Text = "x";
+                
+            }
+            
         }
     }
 
