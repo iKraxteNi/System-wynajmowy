@@ -72,7 +72,7 @@ namespace System_wynajmowy
             this.buttonZ.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonZ.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonZ.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonZ.Location = new System.Drawing.Point(539, 10);
+            this.buttonZ.Location = new System.Drawing.Point(789, 10);
             this.buttonZ.Name = "buttonZ";
             this.buttonZ.Size = new System.Drawing.Size(215, 78);
             this.buttonZ.TabIndex = 1;
@@ -104,7 +104,7 @@ namespace System_wynajmowy
             this.buttonw.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonw.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonw.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonw.Location = new System.Drawing.Point(789, 10);
+            this.buttonw.Location = new System.Drawing.Point(539, 10);
             this.buttonw.Name = "buttonw";
             this.buttonw.Size = new System.Drawing.Size(215, 78);
             this.buttonw.TabIndex = 2;
